@@ -1,0 +1,27 @@
+# Dental Scan — training configuration
+data:
+  train_dir: data/train
+  val_dir: data/val
+  test_dir: data/test
+  image_size: [224, 224]
+  batch_size: 32
+  validation_split: 0.15   # used only when val_dir is not provided separately
+  seed: 42
+
+model:
+  backbone: efficientnetb0   # efficientnetb0 | mobilenetv2
+  dropout: 0.3
+  learning_rate: 0.001
+  fine_tune_learning_rate: 0.00001
+  fine_tune_epochs: 5
+  fine_tune_layers: 20
+
+training:
+  epochs: 15
+  output_model: models/dental_scan.keras
+  class_labels: models/class_labels.json
+
+mlflow:
+  enabled: true              # no-op if mlflow is not installed
+  experiment_name: dental-scan-proj
+  tracking_uri: mlruns

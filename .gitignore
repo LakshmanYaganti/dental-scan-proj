@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Data — never commit X-ray images / patient data
+data/*
+!data/README.md
+
+# Trained models & reports
+models/*
+!models/.gitkeep
+*.keras
+*.h5
+reports/*
+!reports/.gitkeep
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
