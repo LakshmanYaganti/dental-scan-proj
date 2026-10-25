@@ -183,17 +183,13 @@ Interactive docs: http://localhost:8000/docs
 
 ## Results
 
-> **Illustrative baseline — to be reproduced.** The table below shows the *shape* of results this pipeline is designed to produce on a public panoramic dataset. It is **not** a claim of achieved clinical performance. Re-run training + evaluation on your licensed dataset split and replace this table with your measured numbers, dataset name, and split sizes.
+> **No performance is claimed for this repository yet.** The training and evaluation pipeline is complete, but it has not been run on a licensed dental X-ray dataset, so there are no measured results to report — and none are invented here.
 
-| Model | Input | Accuracy | Macro F1 | Notes |
-|---|---|---|---|---|
-| MobileNetV2 (frozen) | 224×224 | 0.78* | 0.76* | Fast baseline, low compute |
-| EfficientNetB0 (frozen) | 224×224 | 0.83* | 0.81* | Default config |
-| EfficientNetB0 (fine-tuned) | 224×224 | 0.86* | 0.84* | Phase-2 fine-tuning, low LR |
+**Evaluation protocol** — run `src/train.py`, then `src/evaluate.py`, on your licensed split:
 
-\* Illustrative placeholder values only.
-
-Per-class metrics, confusion matrix, dataset size, and class balance must accompany any real result. A single accuracy number on an imbalanced dental dataset is misleading.
+- Report accuracy **and** macro-F1, per-class precision/recall, and the confusion matrix. A single accuracy number on an imbalanced dental dataset is misleading.
+- Compare the three shipped configurations: MobileNetV2 (frozen), EfficientNetB0 (frozen), and EfficientNetB0 (fine-tuned, low LR).
+- Publish the dataset name, split sizes, and class balance next to the metrics, so the numbers can be reproduced.
 
 ## Ethics & Medical Disclaimer
 
